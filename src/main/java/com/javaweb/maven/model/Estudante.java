@@ -1,21 +1,22 @@
-package bean.estudante;
+package com.javaweb.maven.model;
 
-import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Alternative;
-import javax.inject.Named;
-import java.io.Serializable;
+import com.javaweb.maven.model.enuns.Turno;
 
-
-@Alternative
-@Named
-@SessionScoped
-public class EstudanteRegistrarBean implements Serializable {
-	private static final long serialVersionUID = -4309459228383308986L;
+public class Estudante {
 	private String nome = "Ander";
 	private String sobrenome = "Milski";
 	private double nota1;
 	private double nota2;
 	private double nota3 = 10;
+	private Turno turno = Turno.MATUTINO;
+
+	public Turno getTurno() {
+		return turno;
+	}
+
+	public void setTurno(Turno turno) {
+		this.turno = turno;
+	}
 
 	public String getNome() {
 		return nome;

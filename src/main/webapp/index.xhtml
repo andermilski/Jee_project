@@ -4,17 +4,24 @@
 	xmlns:composite="http://java.sun.com/jsf/composite"
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
 <head>
 <title>Java Web</title>
 </head>
 <h:body>
-	<h:outputLabel value="#{estudanteRegistrarBean.nome}" />
+	<p:importEnum type="com.javaweb.maven.model.enuns.Turno" var="Turno"
+		allSuffix="ALL_ENUM_VALUES" />
+	<h:outputLabel value="#{estudanteRegistrarBean.estudante.nome}" />
 	<br />
-	<h:outputLabel value="#{estudanteRegistrarBean.sobrenome}" />
+	<h:outputLabel value="#{estudanteRegistrarBean.estudante.sobrenome}" />
 	<br />
-	<h:outputLabel value="#{estudanteRegistrarBean.nota3}" />
+	<h:outputLabel value="#{estudanteRegistrarBean.estudante.nota3}" />
 	<!--and, or, not, eq, ne, lt, gt, le, ge, true, false,null instaceof, empty, div...mod -->
 	<br />
+	<h:outputLabel value="Operador ternario com enuns...." />
+	<br />
+	<h:outputText
+		value="#{estudanteRegistrarBean.estudante.turno eq Turno.VESPERTINO ? 'Cedo pra kct heimm....fdp!!' : 'não'}" />
 </h:body>
 </html>
