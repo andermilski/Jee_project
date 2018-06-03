@@ -1,9 +1,14 @@
 package bean.estudante;
 
-import java.io.Serializable;
+import javax.enterprise.context.SessionScoped;
+import javax.enterprise.inject.Alternative;
 import javax.inject.Named;
+import java.io.Serializable;
 
+
+@Alternative
 @Named
+@SessionScoped
 public class EstudanteRegistrarBean implements Serializable {
 	private static final long serialVersionUID = -4309459228383308986L;
 	private String nome = "Ander";
